@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheet/style.css">
+</head>
+<body>
+    
+    <div class="container">
+        <form action="/create" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name">
+    
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email">
+            
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender">
+                <option>choose</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Binary</option>
+                <option>Non-Binary</option>
+                <option>Transgender</option>
+                <option>Prefer not to say</option>
+            </select>
+
+            
+    
+            <button class="btn" type="submit" name="submit button">Submit</button>
+        </form>
+    </div>
+
+</body>
+<script src="index.js"></script>
+</html>

@@ -1,0 +1,54 @@
+.container
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+}
+
+.box
+{
+    height: 40vh;
+    width: 30vw;
+    margin: 5vw;
+    text-align: center;
+    align-content: center;
+}
+
+.box1
+{
+    background-color: navajowhite;
+    /* grid-row-end: 3;
+    grid-column-start: 2;  */
+}
+.box3
+{
+    background-color: lavenderblush;
+}
+.box4
+{
+    background-color: lightpink;
+}
+.box5
+{
+    background-color: navajowhite;
+}
+.box6
+{
+    background-color: lavenderblush;
+}
+.box7
+{
+    background-color: lightpink;
+}
+.box8
+{
+    background-color: navajowhite;
+}
+.box9
+{
+    background-color: lavenderblush;
+}
+.box10
+{
+    background-color: lightpink;
+}

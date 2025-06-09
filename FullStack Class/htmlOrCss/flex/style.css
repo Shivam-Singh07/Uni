@@ -1,0 +1,46 @@
+.container
+{
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    /* flex-direction: column-reverse; */
+    flex-wrap: wrap;
+ 
+}
+
+.box
+{
+    width: 150px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2px;
+    
+}
+
+.box1
+{
+    background-color: navajowhite;
+}
+.box2
+{
+    background-color: lightblue;
+}
+.box3
+{
+    background-color: lightpink;
+}
+.box4
+{
+    background-color: lightcoral;
+}
+.box5
+{
+    background-color: cyan;
+}
+.box6
+{
+    background-color: cadetblue;
+}

@@ -1,0 +1,1 @@
+const filterle = arr.filter((item) => item === "bye");

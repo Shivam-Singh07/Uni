@@ -1,0 +1,68 @@
+.container
+{
+    height: 70vh;
+    /* background-color: lightcoral; */
+    border: 2px solid bla;
+    border-radius: 50%;
+}
+
+.box
+{
+    background-color: lightskyblue;
+    height: 10vh;
+    width: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    left: 21px;
+    top: 0px;
+    right: 110px;
+    left: 0px;
+    
+
+
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: anim1 5s forwards 1s infinite;
+}
+
+@keyframes anim
+{
+    from
+    {
+        background-color: lightskyblue;
+    }
+    to
+    {
+        background-color: blue;
+    }
+   
+}
+
+@keyframes anim1
+{
+    0%
+    {
+        top: 0px;
+        left: 0px;
+    }
+
+    25%
+    {
+        top: 500px;
+        left: 0px;
+    }
+
+    50%
+    {
+        top:500px;
+        left: 1350px;
+    }
+
+    75%
+    {
+        top: 0px;
+        left: 1350px;
+    }
+}

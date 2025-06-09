@@ -1,0 +1,68 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    background-color: wheat;
+}
+.container
+{
+    display: flex;
+    /* border: 2px solid red; */
+    background-color: black;
+    color: white;
+
+}
+.box
+{
+    /* border: 2px solid wheat; */
+}
+.logo
+{
+    display: flex;
+    width: 20vw;
+    align-items: center;
+}
+.search
+{
+    width: 45vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input
+{
+    width: 30vw;
+    height: 5vh;
+    border-radius: 5vw;
+}
+input::placeholder
+{
+    font-size: 1.1vw;
+    padding-left: 0.8vw;
+}
+.profile
+{
+    width: 33vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+h1
+{
+    margin-left: 1.3vw;
+}
+a
+{
+    margin: 5px 25px;
+}
+.ph
+{
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+}
