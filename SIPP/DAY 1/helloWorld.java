@@ -6,7 +6,7 @@ public class helloWorld {
 
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        if(n == 1)
+        if(n < 1)
         {
             System.out.println("Not Prime");
         }

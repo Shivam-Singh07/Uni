@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Leaflet Map with English Labels and Geocoding</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; }
+    #map { height: 90vh; width: 100%; }
+    #search-box {
+      padding: 10px;
+      text-align: center;
+      background-color: #f2f2f2;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    input, button {
+      padding: 8px;
+      font-size: 16px;
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="search-box">
+    <input type="text" id="locationInput" placeholder="Enter a location (e.g. Taj Mahal)">
+    <button onclick="searchLocation()">Search</button>
+  </div>
+
+  <div id="map"></div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <script>
+    // Initialize map centered over India
+    const map = L.map('map').setView([20.5937, 78.9629], 5);
+
+    // Use CartoDB Positron tile layer with English labels
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; OpenStreetMap contributors & CartoDB',
+      subdomains: 'abcd',
+      maxZoom: 19
+    }).addTo(map);
+
+    let marker;
+
+    function searchLocation() {
+      const location = document.getElementById("locationInput").value.trim();
+      const apiKey = "c9e443f5f3dc4d3494b53594c7acea36"; // 🔁 Replace with your real API key
+
+      if (!location) {
+        alert("Please enter a location.");
+        return;
+      }
+
+      const url = `https://api.opencagedata.com/geocode/v1/json?q=${encodeURIComponent(location)}&key=${apiKey}`;
+
+      fetch(url)
+        .then(res => res.json())
+        .then(data => {
+          if (data.results && data.results.length > 0) {
+            const result = data.results[0];
+            const lat = result.geometry.lat;
+            const lng = result.geometry.lng;
+
+            map.setView([lat, lng], 13);
+
+            if (marker) {
+              map.removeLayer(marker);
+            }
+
+            marker = L.marker([lat, lng]).addTo(map)
+              .bindPopup(`<strong>${result.formatted}</strong><br>Lat: ${lat}, Lng: ${lng}`)
+              .openPopup();
+          } else {
+            alert("Location not found. Try a more specific name.");
+          }
+        })
+        .catch(err => {
+          console.error(err);
+          alert("Error connecting to geocoding service.");
+        });
+    }
+  </script>
+
+</body>
+</html>
